@@ -100,7 +100,7 @@ function set_btn_state(id: string, val: boolean) {
 }
 function set_stick_state(id: string, {x, y}: {x: number, y: number}) {
     const e = document.getElementById(id)
-    e?.setAttribute('transform', `translate(${x * 4},${-y * 4})`)
+    e?.setAttribute('transform', `translate(${(x * 4).toFixed(2)},${(-y * 4).toFixed(2)})`)
 }
 get_ws((msg) => {
     const state = from_msg(msg)
@@ -116,6 +116,11 @@ get_ws((msg) => {
     set_btn_state('minus', state.Minus)
     set_btn_state('home', state.Home)
     set_btn_state('capture', state.Capture)
+
+    set_btn_state('up', state.Up)
+    set_btn_state('down', state.Down)
+    set_btn_state('left', state.Left)
+    set_btn_state('right', state.Right)
 
     set_stick_state('left_stick', state.LeftStick)
     set_stick_state('right_stick', state.RightStick)
