@@ -35,7 +35,7 @@ function get_ws(on_message: (msg: ArrayBuffer) => void) {
             on_message(e.data)
         }
         ws.onclose = () => {
-            get_ws(on_message)
+            setTimeout(() => get_ws(on_message), 1000)
         }
     }
     bindEvents(ws)
