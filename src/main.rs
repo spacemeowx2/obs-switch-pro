@@ -67,9 +67,9 @@ async fn main() {
             })
         }))
         .or(warp::get()
-            .and(warp::fs::dir("./frontend/"))
+            .and(warp::fs::dir("./frontend/dist/"))
         )
-        .or(warp::fs::file("./frontend/index.html"));
+        .or(warp::fs::file("./frontend/dist/index.html"));
 
     warp::serve(route)
         .run(([127, 0, 0, 1], 13030))
