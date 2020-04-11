@@ -122,6 +122,11 @@ get_ws((msg) => {
     set_btn_state('left', state.Left)
     set_btn_state('right', state.Right)
 
+    set_btn_state('l', state.L)
+    set_btn_state('zl', state.ZL)
+    set_btn_state('r', state.R)
+    set_btn_state('zr', state.ZR)
+
     set_stick_state('left_stick', state.LeftStick)
     set_stick_state('right_stick', state.RightStick)
 })
